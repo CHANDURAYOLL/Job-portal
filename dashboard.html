@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+     <div class="sidebar">
+        <h1 class="logo">JobsPlace</h1>
+        <div class="menus">
+            <a href="index.html"><ion-icon name="home-outline"></ion-icon>Home</a>
+            <a href="find-jobs.html"><ion-icon name="newspaper-outline"></ion-icon>Find Jobs</a>
+            <a href="performance.html"><ion-icon name="stats-chart-outline"></ion-icon>Performance</a>
+            <a href="profile.html"><ion-icon name="bookmarks-outline"></ion-icon>Profile</a>
+            <a href="message.html"><ion-icon name="mail-unread-outline"></ion-icon>Message</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-header">
+            <ion-icon class="menu-bar" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input type="text" id="searchJob" placeholder="Search your best job here...">
+                <button class="btn-search" id="searchButton"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
+        </div>
+        <div class="filter-wrapper">
+            <p>Recommended</p>
+            <div class="filter">
+                <button class="btn-filter" onclick="filterJobs('data-science')">Data Science</button>
+                <button class="btn-filter" onclick="filterJobs('data-engineer')">Data Engineer</button>
+                <button class="btn-filter" onclick="filterJobs('data-analyst')">Data Analyst</button>
+                <button class="btn-filter" onclick="filterJobs('data-visualization')">Data Visualization</button>
+                <button class="btn-filter" onclick="filterJobs('crm-analyst')">CRM Analyst</button>
+                <button class="btn-filter" onclick="showAllJobs()">All Jobs</button>
+            </div>
+        </div>
+        <div class="sort">
+            <p>Sort</p>
+            <div class="sort-list">
+                <select id="sortJobs">
+                    <option value="0">All</option>
+                    <option value="1">Newest Post</option>
+                    <option value="2">Oldest Post</option>
+                    <option value="3">Most Relevant</option>
+                    <option value="4">Highest Salary</option>
+                    <option value="5">Job Title</option>
+                </select>
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- Job cards -->
+            <div class="card" data-salary="70000">
+                <div class="card-left blue-bg">
+                    <img src="images/photosnap.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">Photosnap</p>
+                    <h3 class="job-title">Senior Frontend Developer</h3>
+                    <div class="card-sub">
+                        <p>1d ago</p>
+                        <p>Full-time</p>
+                        <p>USA only</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Frontend</h3></button>
+                        <button class="btn-filter"><h3>Senior</h3></button>
+                        <button class="btn-filter"><h3>HTML</h3></button>
+                        <button class="btn-filter"><h3>CSS</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="card" data-salary="85000">
+                <div class="card-left green-bg">
+                    <img src="images/shortly.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">TechCo</p>
+                    <h3 class="job-title">Lead Software Engineer</h3>
+                    <div class="card-sub">
+                        <p>2d ago</p>
+                        <p>Full-time</p>
+                        <p>Remote</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Engineering</h3></button>
+                        <button class="btn-filter"><h3>Lead</h3></button>
+                        <button class="btn-filter"><h3>JavaScript</h3></button>
+                        <button class="btn-filter"><h3>Node.js</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="card" data-salary="60000">
+                <div class="card-left red-bg">
+                    <img src="images/account.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">DesignCorp</p>
+                    <h3 class="job-title">UX/UI Designer</h3>
+                    <div class="card-sub">
+                        <p>3d ago</p>
+                        <p>Part-time</p>
+                        <p>USA only</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Design</h3></button>
+                        <button class="btn-filter"><h3>UX/UI</h3></button>
+                        <button class="btn-filter"><h3>Figma</h3></button>
+                        <button class="btn-filter"><h3>Adobe XD</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="card" data-salary="75000">
+                <div class="card-left purple-bg">
+                    <img src="images/bg-header-desktop.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">MarketingPro</p>
+                    <h3 class="job-title">Marketing Manager</h3>
+                    <div class="card-sub">
+                        <p>4d ago</p>
+                        <p>Full-time</p>
+                        <p>USA only</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Marketing</h3></button>
+                        <button class="btn-filter"><h3>Manager</h3></button>
+                        <button class="btn-filter"><h3>SEO</h3></button>
+                        <button class="btn-filter"><h3>Analytics</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="card" data-salary="50000">
+                <div class="card-left orange-bg">
+                    <img src="images/eyecam-co.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">SalesForce</p>
+                    <h3 class="job-title">Sales Representative</h3>
+                    <div class="card-sub">
+                        <p>5d ago</p>
+                        <p>Full-time</p>
+                        <p>USA only</p>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Sales</h3></button>
+                        <button class="btn-filter"><h3>Representative</h3></button>
+                        <button class="btn-filter"><h3>CRM</h3></button>
+                        <button class="btn-filter"><h3>Negotiation</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+
+            <div class="card" data-salary="72000">
+                <div class="card-left teal-bg">
+                    <img src="images/manage.svg" alt="Company Logo">
+                </div>
+                <div class="card-center">
+                    <p class="card-details">FinTech</p>
+                    <h3 class="job-title">Financial Analyst</h3>
+                    <div class="card-sub">
+                        <p>6d ago</p>
+                        <p>Full-time</p>
+                        <p>Remote</p>
+                    </div>
+                </div>
+
+                <div class="card-right">
+                    <div class="card-details">
+                        <button class="btn-filter"><h3>Finance</h3></button>
+                        <button class="btn-filter"><h3>Analyst</h3></button>
+                        <button class="btn-filter"><h3>Excel</h3></button>
+                        <button class="btn-filter"><h3>Modeling</h3></button>
+                    </div>
+                </div>
+                <div class="remove">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Add New Job</h2>
+            <input type="text" id="jobTitle" placeholder="Job Title">
+            <input type="text" id="companyName" placeholder="Company Name">
+            <button id="addJob">Add Job</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchButton = document.getElementById('searchButton');
+            const searchJob = document.getElementById('searchJob');
+            const sortJobs = document.getElementById('sortJobs');
+            
+            // Search functionality
+            searchButton.addEventListener('click', () => {
+                const searchText = searchJob.value.toLowerCase();
+                document.querySelectorAll('.card').forEach(card => {
+                    const jobTitle = card.querySelector('.job-title').textContent.toLowerCase();
+                    if (jobTitle.includes(searchText)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Sort functionality
+            sortJobs.addEventListener('change', () => {
+                const sortBy = sortJobs.value;
+                const cards = Array.from(document.querySelectorAll('.card'));
+
+                cards.sort((a, b) => {
+                    switch (sortBy) {
+                        case '1': // Newest Post
+                            return new Date(b.querySelector('.card-sub p').textContent) - new Date(a.querySelector('.card-sub p').textContent);
+                        case '2': // Oldest Post
+                            return new Date(a.querySelector('.card-sub p').textContent) - new Date(b.querySelector('.card-sub p').textContent);
+                        case '3': // Most Relevant
+                            return b.querySelector('.card-title').textContent.localeCompare(a.querySelector('.card-title').textContent);
+                        case '4': // Highest Salary
+                            return parseInt(b.getAttribute('data-salary')) - parseInt(a.getAttribute('data-salary'));
+                        case '5': // Job Title
+                            return a.querySelector('.job-title').textContent.localeCompare(b.querySelector('.job-title').textContent);
+                        default:
+                            return 0;
+                    }
+                });
+
+                const wrapper = document.querySelector('.wrapper');
+                cards.forEach(card => wrapper.appendChild(card));
+            });
+
+            // Move job card to top when clicked
+            document.querySelectorAll('.job-title').forEach(title => {
+                title.addEventListener('click', () => {
+                    const card = title.closest('.card');
+                    card.remove();
+                    document.querySelector('.wrapper').prepend(card);
+                });
+            });
+        });
+
+        $(document).ready(function() {
+            $("#openPopup").click(function() {
+                $("#popup").css("display", "block");
+            });
+
+            $("#closePopup").click(function() {
+                $("#popup").css("display", "none");
+            });
+
+            $("#addJob").click(function() {
+                var jobTitle = $("#jobTitle").val();
+                var companyName = $("#companyName").val();
+
+                // Validate input
+                if (jobTitle === "" || companyName === "") {
+                    alert("Please fill out all fields");
+                    return;
+                }
+
+                // Create new job card
+                var card = $("<div></div>").addClass("card");
+
+                // Create card content
+                card.append("<div class='card-left'></div>");
+                card.append("<div class='card-center'></div>");
+                card.append("<div class='card-right'></div>");
+
+                card.find(".card-left").append("<img src='images/photosnap.svg'>");
+
+                card.find(".card-center").append("<p class='card-details'>" + companyName + "</p>");
+                card.find(".card-center").append("<h3>" + jobTitle + "</h3>");
+                card.find(".card-center").append("<div class='card-sub'><p>1d ago</p><p>Full-time</p><p>USA only</p></div>");
+
+                card.find(".card-right").append("<div class='card-details'><button class='btn-filter'><h3>Frontend</h3></button><button class='btn-filter'><h3>Senior</h3></button><button class='btn-filter'><h3>HTML</h3></button><button class='btn-filter'><h3>CSS</h3></button></div>");
+                card.find(".card-right").append("<div class='remove'><button class='btn-filter'><h3>Remove</h3></button></div>");
+
+                $(".wrapper").append(card);
+
+                $("#popup").css("display", "none");
+            });
+
+            $(".wrapper").on("click", ".remove button", function() {
+                $(this).closest(".card").remove();
+            });
+        });
+    </script>
+</body>
+</html>

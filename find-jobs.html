@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsPlace - Find Jobs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">JobsPlace</h1>
+        <div class="menus">
+            <a href="index.html"><ion-icon name="home-outline"></ion-icon>Home</a>
+            <a href="find-jobs.html"><ion-icon name="newspaper-outline"></ion-icon>Find Jobs</a>
+            <a href="performance.html"><ion-icon name="stats-chart-outline"></ion-icon>Performance</a>
+            <a href="profile.html"><ion-icon name="bookmarks-outline"></ion-icon>Profile</a>
+            <a href="message.html"><ion-icon name="mail-unread-outline"></ion-icon>Message</a>
+        </div>
+    </div>
+    <div class="main">
+        <h2>Find Jobs</h2>
+        <div class="search-container">
+            <input type="text" placeholder="Search for jobs..." id="job-search">
+            <button onclick="searchJobs()">Search</button>
+        </div>
+        <div id="job-listings">
+            <!-- Job listings will be dynamically populated here -->
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function searchJobs() {
+            // Function to search for jobs based on input
+            const searchQuery = document.getElementById('job-search').value;
+            // Call the API to search jobs and update #job-listings with results
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsPlace - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">JobsPlace</h1>
+        <div class="menus">
+            <a href="index.html"><ion-icon name="home-outline"></ion-icon>Home</a>
+            <a href="find-jobs.html"><ion-icon name="newspaper-outline"></ion-icon>Find Jobs</a>
+            <a href="performance.html"><ion-icon name="stats-chart-outline"></ion-icon>Performance</a>
+            <a href="profile.html"><ion-icon name="bookmarks-outline"></ion-icon>Profile</a>
+            <a href="message.html"><ion-icon name="mail-unread-outline"></ion-icon>Message</a>
+        </div>
+    </div>
+    <div class="main">
+        <h2>Your Profile</h2>
+        <div id="profile-container">
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Resume:</strong> <a id="user-resume" href="#" target="_blank">Download</a></p>
+            <p><strong>Contact:</strong> <span id="user-contact"></span></p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        // JavaScript to fetch and display user data
+        document.addEventListener('DOMContentLoaded', function () {
+            // Replace this URL with your actual API endpoint
+            fetch('/api/getUserProfile', {
+                method: 'GET',
+                credentials: 'include' // Include cookies for session handling
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the HTML elements with the user data
+                document.getElementById('user-name').textContent = data.name;
+                document.getElementById('user-email').textContent = data.email;
+                document.getElementById('user-contact').textContent = data.contact;
+                document.getElementById('user-resume').href = data.resumeUrl;
+            })
+            .catch(error => {
+                console.error('Error fetching user profile:', error);
+            });
+        });
+    </script>
+</body>
+</html>

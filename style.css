@@ -1,0 +1,416 @@
+:root {
+    --primarycolor:#4c50d3;
+    --secondarycolor: #ffce00;
+    --fontcolor: #1e1e1e;
+    --whitecolor: #fff;
+    --greycolor: #e7e7e7;
+    --darkGreycolor: #5f5f5f;
+    --softPurplr: #e7e8ff;
+    --softBlue:#c3e1ff;
+    --softYellow:#fff5cc;
+    --softRed:#ffcbc8;
+}
+
+* {
+   margin:0;
+   padding :0;
+   box-sizing:0;
+   outline:none;
+   font-family:'Lato ',sans-serif ;
+
+}
+body{
+    width: 100;
+    height: 100vh;
+    display: flex;
+}
+
+
+
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto; 
+}
+
+.logo {
+    font-size: 1.5em;
+    margin: 20px auto; 
+}
+
+.menus {
+    flex-grow: 1; 
+    padding: 20px 0; 
+}
+
+.menus a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+    padding: 10px 20px;
+}
+
+.menus a:hover {
+    background-color: #555;
+}
+
+.ion-icon {
+    margin-right: 10px;
+}
+.main {
+    width: calc(100% - 20% - 25%);
+    min-height: 100%;
+    min-width: 300px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2%;
+    margin-left: 0; 
+    background-color: #e7e7e7;
+    z-index: 1;
+    width: calc(100% - 250px);
+}
+ .main-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+ }
+
+ .menu-bar{
+    background-color: var(--whitecolor);
+    padding: 0.5rem;
+    border-radius: 20px;
+    display: none;
+ }
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background-color: none;
+    border-radius: 20px;
+    padding:0.5rem 1rem;
+    position: relative;
+    background-color: var(--whitecolor);
+}
+.search input{
+    width: 90%;
+    border:none;
+}
+
+.btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0 5%;
+    border:none;
+    background-color: var(--primarycolor);
+    color: var(--whitecolor);
+    font-size: 18px;
+    border-radius: 20px;
+    
+    cursor: pointer;
+}
+.btn-search:hover{
+    background-color: var(--secondarycolor);
+    color: var(--fontcolor);
+}
+
+.filter-wrapper{
+    margin: 1rem 0;
+    font-size: 14px;
+}
+.filter{
+    display: flex;
+    gap: 1rem;
+    overflow-x:auto;
+    margin:0.5rem 0  ;
+}
+.btn-filter{
+    min-width: 110px;
+    padding : 0.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--whitecolor);
+    cursor:pointer;
+
+}
+.btn-filter:hover{
+    background-color: var(--primarycolor);
+    color:var(--whitecolor) ;
+    box-shadow: rgba(0,0, 0, 0.24) 0px 3px 8px ;
+}
+.sort {
+    display: flex;
+    justify-content:flex-end ;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sort-list select {
+    height: 1.5rem;
+    border-radius: 20px;
+    border: none;
+    margin-top:0 0.5rem;
+     
+}
+.wrapper{
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1 rem;
+    overflow-y: auto;
+
+}
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    padding:3%;
+    margin: 0 1%;
+    background-color: var(--whitecolor);
+    line-height: 1.5;
+    gap: 1.5rem;
+    box-shadow: rgba(0,0, 0, 0.16)0px 1px 4px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover{
+    box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+}
+
+.card-left {
+    width: 10%;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    border: 20%;
+}
+
+.card-left img {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    padding: 1rem;
+}
+.card-sub p {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.card-sub ion-icon {
+    vertical-align: middle;
+}
+.card-details p {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    box-shadow: rgba(0,0, 0, 0.24) 0px 3px 8px ;
+
+}
+
+
+.card-right .card-details p {
+    display: inline;
+    margin-right: 10px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-filter {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    margin-right: 10px; /* Adjust the value as per your preference */
+    margin-bottom: 10px; /* Adjust the value as per your preference */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow added here */
+}
+
+.btn-filter h3 {
+    margin: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.space {
+    height: 20px; /* Adjust the value to control the amount of space */
+}
+
+
+/* Styles for Add Button */
+/* Style for sidebar */
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar .menus a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Style for main content */
+.main {
+    padding: 20px;
+}
+
+.main .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main .main-header .menu-bar {
+    font-size: 30px;
+}
+
+.main .main-header .search input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.main .main-header .search button {
+    
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+/* Style for filter and sort */
+.filter-wrapper, .sort {
+    margin-bottom: 20px;
+}
+
+.filter-wrapper p, .sort p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.filter button, .sort select {
+    margin: 5px;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0; 
+    color: #000; 
+}
+
+/* Style for job cards */
+.card {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-left img {
+    width: 100%;
+    height: auto;
+}
+
+.card-center, .card-right {
+    padding: 20px;
+}
+
+.card-sub p {
+    margin-bottom: 5px;
+}
+
+/* Style for add button */
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.add-btn button {
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* Style for popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.popup-content input, .popup-content button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+@media screen and(max-width:700px){
+    .main{
+        width:100%;
+    }
+    
+}
+
+
